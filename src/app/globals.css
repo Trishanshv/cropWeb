@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #111513; /* Minimal dark green-tinted background */
+  --foreground: #f4f6f4;
+  --primary-green: #006B4D;
+  --accent-green: #2ecc71;
+  --card-dark: #1b201d; /* Semantic card background */
+  --card-dark-hover: #222925;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-secondary: #9aa09c;
+  --subpage-tan: #D2B48C;
+}
+
+:root.light {
+  --background: #f7faf8; /* Minimal light green-tinted background */
+  --foreground: #1e2521;
+  --primary-green: #006B4D;
+  --accent-green: #27ae60;
+  --card-dark: #ffffff; /* Semantic card background */
+  --card-dark-hover: #edf2ef;
+  --border: rgba(0, 107, 77, 0.1);
+  --text-secondary: #5a655f;
+  --subpage-tan: #ebe0d2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-green: var(--primary-green);
+  --color-accent-green: var(--accent-green);
+  --color-card-dark: var(--card-dark);
+  --color-card-dark-hover: var(--card-dark-hover);
+  --color-border: var(--border);
+  --color-text-secondary: var(--text-secondary);
+  --color-subpage-tan: var(--subpage-tan);
+  --font-sans: var(--font-outfit), var(--font-geist-sans), ui-sans-serif, system-ui;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Scrollbar for sleek UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* Smooth page/tab transition animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Minimal styling for tech grids instead of heavy circuit graphics */
+.tech-circuit-bg {
+  background-color: var(--card-dark);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Digital counter styling - simplified */
+.digital-lcd {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+}
